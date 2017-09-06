@@ -4,21 +4,22 @@ RSpec.describe "guest becomes a user" do
 			visit '/'
 
 			click_on "Create New User"
-			save_and_open_page
 			fill_in "user[username]", with: "sam"
 			fill_in "user[password]", with: "snider"
 			click_on "Create User"
 			expect(current_path).to eq("/users/#{User.last.id}")
-			expect(page).to have_content("Hi sam")
+			expect(page).to have_content("Hello sam!")
 	end
 	it "guest logs in as an existing user" do
-		click_on "Log In"
+		visit root_url
+		click_on "Login"
 
-		expect(current_path).to eq('/log_in')
+		expect(current_path).to eq('/login')
 		fill_in "username", with: "sam"
 		fill_in "password", with: "snider"
-
-		click_on "Log in"
+		save_and_open_page
+		click_on "Login"
+		
 
 		expect(page).to have_content("Hi sam")
 	end
