@@ -4,6 +4,7 @@ RSpec.describe "guest becomes a user" do
 			visit '/'
 
 			click_on "Create New User"
+			save_and_open_page
 			fill_in "user[username]", with: "sam"
 			fill_in "user[password]", with: "snider"
 			click_on "Create User"
