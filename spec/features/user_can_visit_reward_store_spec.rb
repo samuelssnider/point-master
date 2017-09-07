@@ -12,6 +12,7 @@ RSpec.describe "A user" do
 		fill_in "password", with: "snider"
 		click_on "Login"
 		click_on "Rewards Store"
+		save_and_open_page
 		expect(page).to have_content("Ruby")
 		expect(page).to have_content("Emerald")
 		
