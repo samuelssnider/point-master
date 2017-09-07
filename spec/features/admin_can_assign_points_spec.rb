@@ -10,9 +10,10 @@ RSpec.describe "guest can login as an administrator" do
 		click_on "Login"
 		visit "/"
 		click_on "View users/Assign a new point"
-		save_and_open_page
-		click_on "Assign Point"
+		click_on "Add Point"
+		click_on "Create Point"
+		expect(page).to have_content("sam")
 		expect(page).to have_content("Points: 1")
-		expect(current_path).to eq("/users/#{admin.id}")
+		expect(current_path).to eq("/users")
 	end
 end
