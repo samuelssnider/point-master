@@ -19,6 +19,7 @@ RSpec.describe "guest becomes a user" do
 		fill_in "password", with: "snider"
 		click_on "Login"
 		expect(page).to have_content("Hello sam")
+		expect(page).to have_content("0 Points")
 		click_on "Dashboard"
 		click_on "Logout"
 		

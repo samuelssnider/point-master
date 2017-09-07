@@ -12,9 +12,14 @@
 			some sweet rewards!
 		</p>
 		<p>
-			
+			Your rewards: <br/> <% @user.rewards.each do |reward| %>
+			<h5><%= reward.title %> <br /> <div>
+				<img src=<%= reward.url %>></h5>
+			</div> 
+			<% end %>
 		</p>
 		<p>
+			<%= link_to "Rewards Store", rewards_path %>
 			<%= link_to "Dashboard", root_path %>
 		</p>
 	</body>

@@ -10,7 +10,7 @@
   <li >
     <%= link_to user.username, user_path(user) %> <br />
 		Points: <%= user.points.count %>
-		<%= link_to "Add Point", new_user_point_path(user) %>
+		<%= link_to "Add Point", user_points_path(user), method: 'post' %>
   </li>
   <% end %>
 	</body>
