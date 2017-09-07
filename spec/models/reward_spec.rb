@@ -41,6 +41,22 @@ RSpec.describe Reward, type: :model do
         expect(reward.cost).to eq(1)
       end
     end
+    
+    describe "valid attributes" do
+      it "is valid with valid attrubutes" do
+        reward = Reward.create(title: "Ruby", cost: 3,
+        url: "https://udemy-images.udemy.com/course/750x422/8082_e627_11.jpg")
+        
+        expect(reward).to be_valid
+        expect(reward.cost).to eq(3)
+      end
+    end
   end
-      
+  describe "relationships" do
+    it "can belong to a user" do
+      user = User.create(username: "sam", password: "snider")
+      reward = user.rewards.create(title: "whatever", url: "what")
+      expect(reward).to respond_to(:users)
+    end
+  end    
 end
