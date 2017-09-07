@@ -6,7 +6,13 @@
 	</head>
 	<body>
 		<p>
-			Hello <%= @user.username %>!
+			Hello <%= @user.username %>! </br>
+			You have <%= @user.unredeemed_points %>  Points! <br />
+			You've spent <%= @user.points.count - @user.unredeemed_points %> Points on
+			some sweet rewards!
+		</p>
+		<p>
+			
 		</p>
 		<p>
 			<%= link_to "Dashboard", root_path %>
