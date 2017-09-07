@@ -12,9 +12,9 @@
 			some sweet rewards!
 		</p>
 		<p>
-			Your rewards: <br/> <% @user.rewards.each do |reward| %>
-			<h5><%= reward.title %> <br /> <div>
-				<img src=<%= reward.url %>></h5>
+			Your rewards: <br/> <% @user.user_rewards.each do |user_reward| %>
+			<h5><%= user_reward.reward.title %> <br /> <div>
+				<img src=<%= user_reward.reward.url %>></h5>
 			</div> 
 			<% end %>
 		</p>
