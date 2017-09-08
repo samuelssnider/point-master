@@ -14,7 +14,7 @@
 				<% elsif current_user.admin %>
 				<%= link_to "Create New User", new_user_path %> <br />
 				<%= link_to "Logout", logout_path, method: :delete %> <br />
-				<%= link_to "View users/Assign a new point", users_path %>
+				<%= link_to "View users/Assign a new point", users_path %> <br />
 				<%= link_to "Rewards Store", rewards_path %> <br />
 				
 				<% else %>

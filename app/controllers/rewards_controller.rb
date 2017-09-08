@@ -1,16 +1,15 @@
 class RewardsController < ApplicationController
 	def index
+		@user = User.find(session[:user_id])
 		@rewards = Reward.all
 	end
 	
 	def new
-		@user = User.find(session[:user_id])
-		@reward = @user.rewards.new
+		@reward = Reward.new
 	end
 	
 	def create
-		@user = User.find(session[:user_id])
-		@reward = @user.rewards.new(reward_params)
+		@reward = Rewards.new(reward_params)
 		if @reward.save
 			redirect_to user_path(@user)
 		else

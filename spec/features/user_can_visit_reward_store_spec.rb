@@ -15,4 +15,16 @@ RSpec.describe "A user" do
 		expect(page).to have_content("Ruby")
 		expect(page).to have_content("Emerald")
 	end
+	it "can purchase rewards from the store using points" do
+		admin = User.create(username: "sam", password: "snider", admin: true)
+		reward1 = Reward.create(title: "Ruby", cost: 3,
+		url: "https://udemy-images.udemy.com/course/750x422/8082_e627_11.jpg")
+		reward2 = Reward.create(title: "Emerald", cost: 2,
+		url: "https://www.gempundit.com/skin/frontend/ultimo/default/img/bg/emerald-banner1.png")
+		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+		
+		visit rewards_path
+		save_and_open_page
+		
+	end
 end
