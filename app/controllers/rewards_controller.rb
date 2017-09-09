@@ -8,8 +8,13 @@ class RewardsController < ApplicationController
 		@reward = Reward.new
 	end
 	
+	def update
+		@reward = Reward.find(params[:id])
+		Linker.new(current_user, @reward)
+	end
+	
 	def create
-		@reward = Rewards.new(reward_params)
+		@reward = Reward.new(reward_params)
 		if @reward.save
 			redirect_to user_path(@user)
 		else

@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 		resources :points, only: [:new, :show, :create]
 	end
 	resources :sessions, only: [:new, :create, :show]
-	resources :rewards, only: [:index, :new, :create]
+	resources :rewards, only: [:index, :new, :create, :update]
 end

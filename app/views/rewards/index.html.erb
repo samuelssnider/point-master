@@ -5,7 +5,7 @@
 		<% @rewards.each do |reward| %>
 			<p><%= reward.title %></p>
 			<div>
-				<a href=<%= user_path(@user) %>><img src=<%= reward.url %>> </a>
+				<%= link_to image_tag(reward.url), user_path(@user), method: 'update' %>
 			</div>
 		<% end %>
 
