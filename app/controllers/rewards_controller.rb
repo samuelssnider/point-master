@@ -4,6 +4,10 @@ class RewardsController < ApplicationController
 		@rewards = Reward.all
 	end
 	
+	def show
+		@reward = Reward.find(params[:id])
+	end
+	
 	def new
 		@reward = Reward.new
 	end

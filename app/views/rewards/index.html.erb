@@ -1,11 +1,11 @@
-<h3>Welcome to the super fun time awesome rewards store</h3>
+<h3 class = 'center'>Welcome to the super fun time awesome rewards store!</h3>
 <h4>Pick your fabulous prizes here:</h4>
 
 
 		<% @rewards.each do |reward| %>
 			<p><%= reward.title %></p>
 			<div>
-				<%= link_to image_tag(reward.url), user_path(@user), method: 'update' %>
+				<%= link_to image_tag(reward.url), reward_path(reward) %>
 			</div>
 		<% end %>
 
