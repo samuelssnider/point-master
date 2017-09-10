@@ -5,13 +5,14 @@
 		<title></title>
 	</head>
 	<body>
-		<%= link_to "Back to Dashboard", root_path %>
+		<%= link_to "Back to Dashboard", root_path %> <br /><br />
 	<% @users.each do |user| %>
   <li >
     <%= link_to user.username, user_path(user) %> <br />
 		Points: <%= user.points.count %>
-		<%= link_to "Add Point", user_points_path(user), method: 'post' %>
+		<%= link_to "Add Point", user_points_path(user), method: 'post' %> 
   </li>
+	<br />
   <% end %>
 	</body>
 </html>
