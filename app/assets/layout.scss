@@ -1,0 +1,37 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 15px;
+  background: #f2f5f8;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-cont {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.app-cont-thin {
+  max-width: 650px;
+  background: #fff;
+  padding: 1em 0;
+  border-radius: 3px;
+}
+
+.app-logo {
+  a {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.71);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px rgba(218, 62, 62, 0.32);
+
+    b {
+      color: rgba(255, 153, 153, 0.83);
+    }
+  }
+}
