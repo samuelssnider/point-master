@@ -8,9 +8,7 @@
 		<h1 class= 'center'> <%= @reward.title %> </h1>
 		<div class= 'center'>
 			<%= image_tag(@reward.url) %> <br />
-			<%= link_to "Add this reward", user_path(current_user) %>
-			
+			<%= link_to "Add Reward", reward_path(@reward), action: 'update', method: 'patch' %>
 		</div>
-		
 	</body>
 </html>

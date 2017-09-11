@@ -14,6 +14,10 @@ class User < ApplicationRecord
     end
 	end
 	
+	def point_subtract(number)
+	end
+		
+	
 	def unredeemed_points
 		points.count{|point| !point.redeemed}
 	end

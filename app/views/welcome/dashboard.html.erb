@@ -16,11 +16,12 @@
 				<%= link_to "Create New User", new_user_path %> <br />
 				<%= link_to "Logout", logout_path, method: :delete %> <br />
 				<%= link_to "View users/Assign a new point", users_path %> <br />
+				<span><%= link_to "Your points and Rewards", user_path(@user) %> </span> <br />
 				<%= link_to "Rewards Store", rewards_path %> <br />
 				
 				<% else %>
 				<%= link_to "Logout", logout_path, method: :delete %> <br />
-				<span><%= link_to "Your points and Rewards", user_path(@user) %> </span>
+				<span><%= link_to "Your points and Rewards", user_path(@user) %> </span> <br />
 				<%= link_to "Rewards Store", rewards_path %> <br />
 				<% end %>
 			</p>
