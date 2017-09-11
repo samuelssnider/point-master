@@ -15,6 +15,9 @@ class User < ApplicationRecord
 	end
 	
 	def point_subtract(number)
+		number.times do |point, index|
+			unredeemed_points[index].redeemed = true
+		end
 	end
 		
 	
