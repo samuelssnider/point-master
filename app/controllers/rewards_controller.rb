@@ -26,7 +26,7 @@ class RewardsController < ApplicationController
 		if current_user.unredeemed_points >= @reward.cost
 			Linker.new(current_user, @reward)
 			flash[:success] = "You added #{@reward.title} to your rewards"
-			current_user.point_subtract(@reward.cost)
+			# current_user.point_subtract(@reward.cost)
 		else
 			flash[:failure] = "You don't have enough points to add #{@reward.title}"
 			redirect_to rewards_path
